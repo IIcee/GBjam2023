@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using GBTemplate;
+using UnityEngine.UI;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -14,11 +16,28 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] GameObject creditText;
     [SerializeField] GameObject menuButtons;
+    [SerializeField] Button startButton;
+    private GBConsoleController gb;
 
     //StartNew starts the first scene of the game.
     public void StartNew()
     {
         SceneManager.LoadScene(1);
+    }
+
+    private void Start()
+    {
+        gb = GBConsoleController.GetInstance();
+    }
+
+    //runs every frame of the game
+    private void Update()
+    {
+        //if credits are open and user pressed B, return to main menu
+        if (gb.Input.ButtonB && creditText.activeInHierarchy)
+        {
+            ToggleCredits();
+        }
     }
 
     //Exit quits the game. If statement is for quitting editor vs game.
@@ -36,11 +55,16 @@ public class MainMenu : MonoBehaviour
     {
         menuButtons.SetActive(!menuButtons.activeInHierarchy);
         creditText.SetActive(!creditText.activeInHierarchy);
+        if (menuButtons.activeInHierarchy)  //selects the start button for keyboard menu navigation
+        {
+         startButton.Select();   
+        }
     }
 
     //Transitions to the options screen.
     //Doesn't currently do anything, because there is no options screen yet.
-    public void OptionsScreen(){
+    public void OptionsScreen()
+    {
         //SceneManager.LoadScene(ENTER OPTIONS SCENE NUMBER HERE);
     }
 
