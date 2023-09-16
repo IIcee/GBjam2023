@@ -18,6 +18,10 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject menuButtons;
     [SerializeField] Button startButton;
     private GBConsoleController gb;
+    [SerializeField] private MainManager mainManager;
+    [SerializeField] AudioClip backgroundMusic;
+
+
 
     //StartNew starts the first scene of the game.
     public void StartNew()
@@ -25,9 +29,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    //runs at start, initializes gb
     private void Start()
     {
         gb = GBConsoleController.GetInstance();
+        mainManager = MainManager.Instance;
+        gb.Sound.PlayMusic(backgroundMusic);
     }
 
     //runs every frame of the game
@@ -65,7 +72,7 @@ public class MainMenu : MonoBehaviour
     //Doesn't currently do anything, because there is no options screen yet.
     public void OptionsScreen()
     {
-        //SceneManager.LoadScene(ENTER OPTIONS SCENE NUMBER HERE);
+        mainManager.LoadOptions();
     }
 
 }
