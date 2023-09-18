@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3bbc6fd552e965142a350f69f94d2ff9
+guid: d035766e4526c3745b36e8bd45b9d533
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: buttons_start
+      name: start_button
       rect:
         serializedVersion: 2
         x: 0
@@ -113,41 +113,41 @@ TextureImporter:
         width: 38
         height: 11
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3f4d3c1b49c2844c8475dd2d3361d19
-      internalID: 976229910
+      spriteID: 892252fd2668d2548a2741f86ce20e80
+      internalID: 650617268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_start_push
+      name: start_button_press
       rect:
         serializedVersion: 2
         x: 96
-        y: 53
+        y: 54
         width: 38
         height: 11
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a51ba775f59c264c96ebd3b017aefd4
-      internalID: -809833735
+      spriteID: 4224b24a058ae3143a628ac2ba6dd554
+      internalID: 1679693824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_options
+      name: options_button
       rect:
         serializedVersion: 2
         x: 0
@@ -155,20 +155,20 @@ TextureImporter:
         width: 38
         height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d675581fdca01944696943ae52639c6b
-      internalID: 1271490783
+      spriteID: 545c77d6769ae18488ea24074b7416b1
+      internalID: 350665178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_options_push
+      name: options_button_press
       rect:
         serializedVersion: 2
         x: 96
@@ -176,20 +176,20 @@ TextureImporter:
         width: 38
         height: 11
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 443e7e0c083f25b489454d12271b42a1
-      internalID: -1939159362
+      spriteID: 7d595a2439170e640946f479a3980e60
+      internalID: -306549166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_credits
+      name: credits_button
       rect:
         serializedVersion: 2
         x: 0
@@ -197,20 +197,20 @@ TextureImporter:
         width: 38
         height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3159779b7aac37146ae41f71734675c5
-      internalID: 1428516745
+      spriteID: 327eec44486c9c049a734bcc313d2be4
+      internalID: 330786405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_credits_push
+      name: credits_button_press
       rect:
         serializedVersion: 2
         x: 96
@@ -218,20 +218,20 @@ TextureImporter:
         width: 38
         height: 11
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49cbba63ee623c449b568c9f97e55b84
-      internalID: 63597542
+      spriteID: 29ff526f33b9614459db68f8ac894d8b
+      internalID: -2069995366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_exit
+      name: exit_button
       rect:
         serializedVersion: 2
         x: 0
@@ -239,20 +239,20 @@ TextureImporter:
         width: 38
         height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 003940e017b2cab4389b96534cd77454
-      internalID: -1502257822
+      spriteID: 93c2fcc65bac33045b7c1781e000c65f
+      internalID: 1860385903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_exit_push
+      name: exit_button_press
       rect:
         serializedVersion: 2
         x: 96
@@ -260,14 +260,14 @@ TextureImporter:
         width: 38
         height: 11
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e13de429f81a1d44b1d5fc3646b9cac
-      internalID: 140434609
+      spriteID: 2b0c44fcc48698047809d2c35167a6e2
+      internalID: 1405232096
       vertices: []
       indices: 
       edges: []
@@ -283,14 +283,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      buttons_start: 976229910
-      buttons_start_push: -809833735
-      buttons_exit: -1502257822
-      buttons_credits: 1428516745
-      buttons_credits_push: 63597542
-      buttons_options: 1271490783
-      buttons_options_push: -1939159362
-      buttons_exit_push: 140434609
+      options_button: 350665178
+      credits_button: 330786405
+      options_button_press: -306549166
+      start_button_press: 1679693824
+      exit_button: 1860385903
+      start_button: 650617268
+      exit_button_press: 1405232096
+      credits_button_press: -2069995366
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
