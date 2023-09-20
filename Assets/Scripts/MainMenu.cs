@@ -9,15 +9,14 @@ using UnityEditor;
 #endif
 
 /*
-Script to attach to the canvas of the main menu.
+Script for things in the main menu.
 Currently has methods to exit the game, switch to credits view, and open the startand options scenes.
 */
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] GameObject creditText;
     private GBConsoleController gb;
-    [SerializeField] private MainManager mainManager;
-    [SerializeField] AudioClip backgroundMusic;
+    [SerializeField] AudioClip titleMusic;
 
 
 
@@ -31,8 +30,7 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         gb = GBConsoleController.GetInstance();
-        mainManager = MainManager.Instance;
-        gb.Sound.PlayMusic(backgroundMusic);
+        gb.Sound.PlayMusic(titleMusic);
     }
 
     //runs every frame of the game
