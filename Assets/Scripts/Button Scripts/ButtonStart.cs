@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ButtonStart : Button
 {   
     //this function WILL change to the first scene. Currently it fades to black and back.
-    protected override void Press()
+    public override void Press()
     {
         base.Press();
         //SceneManager.LoadScene(1);

@@ -1218,9 +1218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedSprite: {fileID: 1405232096, guid: d035766e4526c3745b36e8bd45b9d533, type: 3}
-  nextButton: {fileID: 2087178771}
-  prevButton: {fileID: 2048873324}
-  isSelected: 0
+  buttonSprite: {fileID: 1860385903, guid: d035766e4526c3745b36e8bd45b9d533, type: 3}
 --- !u!212 &1775711547
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1570,9 +1568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedSprite: {fileID: -2069995366, guid: d035766e4526c3745b36e8bd45b9d533, type: 3}
-  nextButton: {fileID: 1775711544}
-  prevButton: {fileID: 2119326502}
-  isSelected: 0
+  buttonSprite: {fileID: 330786405, guid: d035766e4526c3745b36e8bd45b9d533, type: 3}
 --- !u!212 &2048873326
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1649,6 +1645,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2071983816}
+  - component: {fileID: 2071983817}
   m_Layer: 0
   m_Name: Buttons
   m_TagString: Untagged
@@ -1675,6 +1672,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2071983817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071983815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d3f876c9dd647449eae79cc4543cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons:
+  - {fileID: 2087178772}
+  - {fileID: 2119326503}
+  - {fileID: 2048873325}
+  - {fileID: 1775711546}
+  buttonIndex: 0
 --- !u!1 &2087178771
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,9 +1721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedSprite: {fileID: 1679693824, guid: d035766e4526c3745b36e8bd45b9d533, type: 3}
-  nextButton: {fileID: 2119326502}
-  prevButton: {fileID: 1775711544}
-  isSelected: 1
+  buttonSprite: {fileID: 650617268, guid: d035766e4526c3745b36e8bd45b9d533, type: 3}
 --- !u!212 &2087178773
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1864,9 +1877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedSprite: {fileID: -306549166, guid: d035766e4526c3745b36e8bd45b9d533, type: 3}
-  nextButton: {fileID: 2048873324}
-  prevButton: {fileID: 2087178771}
-  isSelected: 0
+  buttonSprite: {fileID: 350665178, guid: d035766e4526c3745b36e8bd45b9d533, type: 3}
 --- !u!212 &2119326504
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ButtonCredits : Button
 {
 
-    protected override void Press()
+    public override void Press()
     {
         base.Press();
         Debug.Log("Load Credits Scene");

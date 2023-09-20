@@ -8,7 +8,7 @@ using UnityEditor;
 public class ButtonExit : Button
 {   
     //Exits the game/editor
-    protected override void Press()
+    public override void Press()
     {
         base.Press();
 #if UNITY_EDITOR
@@ -16,9 +16,5 @@ public class ButtonExit : Button
 #else
         Application.Quit();
 #endif
-    }
-
-    protected override void Navigation(){
-        base.Navigation();
     }
 }
