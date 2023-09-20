@@ -9,17 +9,14 @@ using UnityEditor;
 #endif
 
 /*
-Script to attach to the canvas of the main menu.
+Script for things in the main menu.
 Currently has methods to exit the game, switch to credits view, and open the startand options scenes.
 */
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] GameObject creditText;
-    [SerializeField] GameObject menuButtons;
-    [SerializeField] Button startButton;
     private GBConsoleController gb;
-    [SerializeField] private MainManager mainManager;
-    [SerializeField] AudioClip backgroundMusic;
+    [SerializeField] AudioClip titleMusic;
 
 
 
@@ -33,18 +30,13 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         gb = GBConsoleController.GetInstance();
-        mainManager = MainManager.Instance;
-        gb.Sound.PlayMusic(backgroundMusic);
+        gb.Sound.PlayMusic(titleMusic);
     }
 
     //runs every frame of the game
     private void Update()
     {
-        //if credits are open and user pressed B, return to main menu
-        if (gb.Input.ButtonB && creditText.activeInHierarchy)
-        {
-            ToggleCredits();
-        }
+
     }
 
     //Exit quits the game. If statement is for quitting editor vs game.
@@ -56,23 +48,4 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
 #endif
     }
-
-    //Toggles the credits vs menu buttons.
-    public void ToggleCredits()
-    {
-        menuButtons.SetActive(!menuButtons.activeInHierarchy);
-        creditText.SetActive(!creditText.activeInHierarchy);
-        if (menuButtons.activeInHierarchy)  //selects the start button for keyboard menu navigation
-        {
-         startButton.Select();   
-        }
-    }
-
-    //Transitions to the options screen.
-    //Doesn't currently do anything, because there is no options screen yet.
-    public void OptionsScreen()
-    {
-        mainManager.LoadOptions();
-    }
-
 }
