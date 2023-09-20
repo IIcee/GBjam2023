@@ -19,10 +19,7 @@ public class Button : MonoBehaviour
 {
     [SerializeField] Sprite selectedSprite;
     [SerializeField] Sprite buttonSprite;
-
-    public delegate void PressDelegate();
-    public PressDelegate pressMethod;
-
+    
     protected GBConsoleController gb;
 
     // Start is called before the first frame update

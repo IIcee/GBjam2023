@@ -23,18 +23,20 @@ public class ButtonManager : MonoBehaviour
 
 
     // Start is called before the first frame update
+    //initializes gbcontroller and selects start
     void Start()
     {
         gb = GBConsoleController.GetInstance();
         buttons[buttonIndex].Select();
     }
 
-    // Update is called once per frame
+    // Update is called once per frame. Calls navigation.
     void Update()
     {
         Navigate();
     }
 
+    //Manages button presses and calls navigation support methods.
     protected virtual void Navigate()
     {
         if (gb.Input.ButtonAJustPressed)
@@ -54,6 +56,7 @@ public class ButtonManager : MonoBehaviour
         }
     }
 
+    //Selects the next button and adjusts button index
     private void SelectNext()
     {
         buttons[buttonIndex].Unselect();
@@ -62,6 +65,7 @@ public class ButtonManager : MonoBehaviour
         buttons[buttonIndex].Select();
     }
 
+    //Selects the previous button and adjusts button index
     private void SelectPrev()
     {
         buttons[buttonIndex].Unselect();
