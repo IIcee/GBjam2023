@@ -23,7 +23,7 @@ public class Button : MonoBehaviour
     protected GBConsoleController gb;
 
     // Start is called before the first frame update
-    protected void Start()
+    protected virtual void Start()
     {
         gb = GBConsoleController.GetInstance();
     }

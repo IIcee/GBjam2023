@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using GBTemplate;
 using UnityEngine.UI;
+using System;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -15,8 +17,14 @@ Currently has methods to exit the game, switch to credits view, and open the sta
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] GameObject creditText;
+    [SerializeField] GameObject menuBG;
+    [SerializeField] GameObject menuButts;    //hehe
+
+    bool isCredits;
+
     private GBConsoleController gb;
     [SerializeField] AudioClip titleMusic;
+
 
 
 
@@ -35,8 +43,26 @@ public class MainMenu : MonoBehaviour
 
     //runs every frame of the game
     private void Update()
-    {
+    {   
+        //Can return from credits scene with either A or B buttons
+        if (isCredits && (gb.Input.ButtonAJustPressed || gb.Input.ButtonBJustPressed))
+        {
+            CreditToggler();
+        }
+    }
 
+    //Toggles the scene between credits and main menu.
+    public void CreditToggler()
+    {
+        creditText.SetActive(!creditText.activeInHierarchy);
+        menuBG.SetActive(!menuBG.activeInHierarchy);
+        menuButts.SetActive(!menuButts.activeInHierarchy);
+        StartCoroutine(CreditDelay());
+    }
+
+    IEnumerator CreditDelay(){
+        yield return new WaitForSeconds(0.5f);
+        isCredits = !isCredits;
     }
 
     //Exit quits the game. If statement is for quitting editor vs game.
