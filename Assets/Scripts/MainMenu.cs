@@ -58,9 +58,10 @@ public class MainMenu : MonoBehaviour
         if (creditText.activeInHierarchy){
             gb.Sound.PlaySound(selectAudio);
         }
+        menuButts.SetActive(!menuButts.activeInHierarchy);
         creditText.SetActive(!creditText.activeInHierarchy);
         menuBG.SetActive(!menuBG.activeInHierarchy);
-        menuButts.SetActive(!menuButts.activeInHierarchy);
+        
         StartCoroutine(CreditDelay());
     }
 
