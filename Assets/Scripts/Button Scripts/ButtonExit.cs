@@ -6,15 +6,24 @@ using UnityEditor;
 #endif
 
 public class ButtonExit : Button
-{   
-    //Exits the game/editor
-    public override void Press()
-    {
-        base.Press();
+{
+        [SerializeField] AudioClip pressAudio;
+
+        //Exits the game/editor
+        public override void Press()
+        {
+                base.Press();
+                StartCoroutine(ExitSoundDelay());
+        }
+
+        IEnumerator ExitSoundDelay()
+        {
+                yield return new WaitForSeconds(pressAudio.length);
 #if UNITY_EDITOR
-        EditorApplication.ExitPlaymode();
+                EditorApplication.ExitPlaymode();
 #else
         Application.Quit();
 #endif
-    }
+
+        }
 }

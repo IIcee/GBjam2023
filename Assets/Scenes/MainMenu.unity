@@ -156,6 +156,7 @@ MonoBehaviour:
   menuBG: {fileID: 1150581164}
   menuButts: {fileID: 2071983815}
   titleMusic: {fileID: 8300000, guid: 5fdad522b60c24f29b668895a72b2359, type: 3}
+  selectAudio: {fileID: 8300000, guid: 745f93408f2df45daa0b7e9d06af2e1f, type: 3}
 --- !u!4 &226484749
 Transform:
   m_ObjectHideFlags: 0
@@ -580,6 +581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedSprite: {fileID: -404447555, guid: d035766e4526c3745b36e8bd45b9d533, type: 3}
   buttonSprite: {fileID: 1881061733, guid: d035766e4526c3745b36e8bd45b9d533, type: 3}
+  pressAudio: {fileID: 8300000, guid: fb65965e71d684b5a8523e926a5f79fe, type: 3}
 --- !u!212 &1775711547
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -757,7 +759,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071983815}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.45, y: 0.6, z: 0}
+  m_LocalPosition: {x: -0.45, y: 0.608, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -786,6 +788,8 @@ MonoBehaviour:
   - {fileID: 2048873325}
   - {fileID: 1775711546}
   buttonIndex: 0
+  selectAudio: {fileID: 8300000, guid: 745f93408f2df45daa0b7e9d06af2e1f, type: 3}
+  pressAudio: {fileID: 8300000, guid: fb65965e71d684b5a8523e926a5f79fe, type: 3}
 --- !u!1 &2087178771
 GameObject:
   m_ObjectHideFlags: 0

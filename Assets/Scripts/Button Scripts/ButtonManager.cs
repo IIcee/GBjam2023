@@ -18,9 +18,12 @@ Has methods for:
 public class ButtonManager : MonoBehaviour
 {
     protected GBConsoleController gb;
+
     [SerializeField] Button[] buttons;
     [SerializeField] int buttonIndex = 0;
 
+    [SerializeField] AudioClip selectAudio;
+    [SerializeField] AudioClip pressAudio;
 
     // Start is called before the first frame update
     //initializes gbcontroller and selects start
@@ -42,6 +45,7 @@ public class ButtonManager : MonoBehaviour
         if (gb.Input.ButtonAJustPressed)
         {
             Debug.Log($"A.");
+            gb.Sound.PlaySound(pressAudio);
             buttons[buttonIndex].Press();
         }
         if (gb.Input.UpJustPressed)
@@ -62,6 +66,7 @@ public class ButtonManager : MonoBehaviour
         buttons[buttonIndex].Unselect();
         buttonIndex = (buttonIndex+1)%buttons.Length;
         Debug.Log(buttonIndex);
+        gb.Sound.PlaySound(selectAudio);
         buttons[buttonIndex].Select();
     }
 
@@ -71,6 +76,7 @@ public class ButtonManager : MonoBehaviour
         buttons[buttonIndex].Unselect();
         buttonIndex = (buttons.Length+buttonIndex-1)%buttons.Length;
         Debug.Log(buttonIndex);
+        gb.Sound.PlaySound(selectAudio);
         buttons[buttonIndex].Select();
     }
 }

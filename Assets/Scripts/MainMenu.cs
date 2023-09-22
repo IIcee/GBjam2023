@@ -24,6 +24,7 @@ public class MainMenu : MonoBehaviour
 
     private GBConsoleController gb;
     [SerializeField] AudioClip titleMusic;
+    [SerializeField] AudioClip selectAudio; //select audio plays when returning to menu
 
 
 
@@ -54,6 +55,9 @@ public class MainMenu : MonoBehaviour
     //Toggles the scene between credits and main menu.
     public void CreditToggler()
     {
+        if (creditText.activeInHierarchy){
+            gb.Sound.PlaySound(selectAudio);
+        }
         creditText.SetActive(!creditText.activeInHierarchy);
         menuBG.SetActive(!menuBG.activeInHierarchy);
         menuButts.SetActive(!menuButts.activeInHierarchy);
