@@ -6,6 +6,8 @@ using UnityEngine.InputSystem.XR;
 
 public class PlayerMovement : MonoBehaviour
 {
+    // adding public animator for player
+
     private float horizontal;
     [SerializeField] private float speed = 4f;
     [SerializeField] private float jumpingPower = 2f;
@@ -28,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // animator logic
+
+
         horizontal = Input.GetAxisRaw("Horizontal");
 
         if (gb.Input.UpJustPressed && IsGrounded())

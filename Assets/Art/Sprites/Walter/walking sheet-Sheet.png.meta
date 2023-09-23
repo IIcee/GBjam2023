@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WalkingRightStanding
+      name: right_idle
       rect:
         serializedVersion: 2
         x: 1
@@ -126,7 +126,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkingRightLeftFoot
+      name: right_step_1
       rect:
         serializedVersion: 2
         x: 17
@@ -147,7 +147,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkingRightRightFoot
+      name: right_step_2
       rect:
         serializedVersion: 2
         x: 33
@@ -168,7 +168,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkingLeftStanding
+      name: left_idle
       rect:
         serializedVersion: 2
         x: 2
@@ -189,7 +189,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkingLeftLeftFoot
+      name: left_step_1
       rect:
         serializedVersion: 2
         x: 17
@@ -210,7 +210,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkingLeftRightFoot
+      name: left_step_2
       rect:
         serializedVersion: 2
         x: 35
@@ -241,12 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      WalkingLeftLeftFoot: 764726326
-      WalkingRightRightFoot: -655847624
-      WalkingRightStanding: -651859545
-      WalkingRightLeftFoot: -1905821544
-      WalkingLeftRightFoot: 1612755757
-      WalkingLeftStanding: -290785505
+      left_step_1: 764726326
+      right_step_1: -1905821544
+      left_step_2: 1612755757
+      right_step_2: -655847624
+      right_idle: -651859545
+      left_idle: -290785505
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

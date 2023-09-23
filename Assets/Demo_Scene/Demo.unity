@@ -123,6 +123,31 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &287383722 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1732757143628557879, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
+  m_PrefabInstance: {fileID: 1584748622}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &287383723
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287383722}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1b586fd56b061634ebb6f644349b7d73, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &953890803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -187,10 +212,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5942504918656043399, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: -5942504918656043399, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.27
+      objectReference: {fileID: 0}
     - target: {fileID: 1732757143628557879, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1732757143628557880, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -651859545, guid: 166ff0f70530fd54ab7577df1cac1e08, type: 3}
     - target: {fileID: 1732757143628557881, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -246,6 +283,10 @@ PrefabInstance:
     - target: {fileID: 7562129600532361164, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
       propertyPath: speed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562129600532361164, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
+      propertyPath: animator
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
