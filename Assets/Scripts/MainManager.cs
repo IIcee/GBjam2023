@@ -44,7 +44,6 @@ public class MainManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         //fade back
         yield return gb.Display.StartCoroutine(gb.Display.FadeFromBlack(2));
-        Debug.Log("Banana3");
     }
 
     //Pause stops the time and brings up the pause screen.
@@ -68,10 +67,16 @@ public class MainManager : MonoBehaviour
     }
 
     //Resets scene
-    public void ResetScene()
+    public IEnumerator ResetScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1; //make sure time is ok in case of pausing
+        //fade
+        yield return gb.Display.StartCoroutine(gb.Display.FadeToBlack(2));
+        //load next scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //fade back
+        yield return gb.Display.StartCoroutine(gb.Display.FadeFromBlack(2));
+        
     }
 
     /*

@@ -7,22 +7,22 @@ using UnityEditor;
 
 public class ButtonExit : Button
 {
-        [SerializeField] AudioClip pressAudio;
-
         //Exits the game/editor
         public override void Press()
         {
                 base.Press();
-                StartCoroutine(ExitSoundDelay());
+                StartCoroutine(ExitFade());
         }
 
-        IEnumerator ExitSoundDelay()
+        IEnumerator ExitFade()
         {
-                yield return new WaitForSeconds(pressAudio.length);
+                Time.timeScale = 1; //make sure time is ok in case of pausing
+                                    //fade
+                yield return gb.Display.StartCoroutine(gb.Display.FadeToBlack(2));
 #if UNITY_EDITOR
                 EditorApplication.ExitPlaymode();
 #else
-        Application.Quit();
+                Application.Quit();
 #endif
 
         }

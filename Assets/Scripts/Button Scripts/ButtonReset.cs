@@ -8,6 +8,6 @@ public class ButtonReset : Button
     public override void Press()
     {
         base.Press();
-        mainManager.ResetScene();
+        StartCoroutine(mainManager.ResetScene());
     }
 }
