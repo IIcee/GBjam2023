@@ -1,67 +1,60 @@
 using GBTemplate;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // adding public animator for player
+    [SerializeField][Range(1.0f, 10.0f)] private float speed;
+    [SerializeField] float speedAdjuster;
+    [SerializeField] private float jumpingPower;
 
-    private float horizontal;
-    [SerializeField] private float speed = 4f;
-    [SerializeField] private float jumpingPower = 2f;
-    private bool isFacingRight = true;
-
-    private Rigidbody2D rb;
     private GBConsoleController gb;
+    private Rigidbody2D rb;
     private Transform groundCheck;
-    private GameObject playerObject;
+    private SpriteRenderer playerSprite;
+
     [SerializeField] private LayerMask groundLayer;
 
+    //Fetching all the components.
     void Start()
     {
         gb = GBConsoleController.GetInstance();
-
-        playerObject = GetComponent<GameObject>();
         rb = GetComponent<Rigidbody2D>();
         groundCheck = GetComponentInChildren<Transform>();
+        playerSprite = GetComponentInChildren<SpriteRenderer>();
     }
 
+    //Simple movement. There's no maxSpeed so the longer you hold the faster you get.
     void Update()
     {
-        // animator logic
+        if (gb.Input.Left)
+        {
+            rb.velocity += speed * Vector2.left/speedAdjuster;
+            Debug.Log(rb.velocity);
+            //transform.position += gb.Input.LeftPressedTime * speed * Time.deltaTime * -Vector3.right;
+            playerSprite.flipX = true;
+        }
 
+        if (gb.Input.Right)
+        {
+            rb.velocity += speed * Vector2.right/speedAdjuster;
+            Debug.Log(rb.velocity);
+            //transform.position += gb.Input.RightPressedTime * speed * Time.deltaTime * transform.right;
+            playerSprite.flipX = false;
+        }
 
-        horizontal = Input.GetAxisRaw("Horizontal");
-
+        //You jump only when you're on ground.
         if (gb.Input.UpJustPressed && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            Debug.Log(rb.velocity);
         }
 
-        Flip();
         IsGrounded();
     }
 
-    private void FixedUpdate()
-    {
-        rb.velocity = new Vector2 (horizontal * speed, rb.velocity.y);
-    }
-
+    //Checks if player is on ground using the collision of a separate empty object to an environment object which is in the "ground" layer.
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-    }
-
-    private void Flip()
-    {
-        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
-        {
-            isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;  
-            transform.localScale = localScale;
-        }
     }
 }

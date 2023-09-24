@@ -155,6 +155,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8774848923803282908, guid: 96186286ba942eb46a610ab3d08a0691, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8683772385332573690, guid: 96186286ba942eb46a610ab3d08a0691, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -5020831022546812273, guid: 96186286ba942eb46a610ab3d08a0691, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -3929036428689015069, guid: 96186286ba942eb46a610ab3d08a0691, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997549049019450711, guid: 96186286ba942eb46a610ab3d08a0691, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3944161244654585285, guid: 96186286ba942eb46a610ab3d08a0691, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5195941023622377248, guid: 96186286ba942eb46a610ab3d08a0691, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -203,6 +227,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: demo_map
       objectReference: {fileID: 0}
+    - target: {fileID: 8224628347291100434, guid: 96186286ba942eb46a610ab3d08a0691, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: -2695619058785784247, guid: 96186286ba942eb46a610ab3d08a0691, type: 3}
 --- !u!1001 &1584748622
@@ -212,6 +240,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5942504918656043399, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
+      propertyPath: m_Size.x
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: -5942504918656043399, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
+      propertyPath: m_Size.y
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: -5942504918656043399, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5942504918656043399, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -5942504918656043399, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.13
@@ -282,11 +326,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7562129600532361164, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
       propertyPath: speed
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7562129600532361164, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
       propertyPath: animator
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562129600532361164, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
+      propertyPath: jumpingPower
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562129600532361164, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
+      propertyPath: speedAdjuster
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
