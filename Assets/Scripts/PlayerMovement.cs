@@ -1,5 +1,6 @@
 using System;
 using GBTemplate;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -16,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Transform groundCheck;
     private SpriteRenderer playerSprite;
-    private Transform playerReset;
+    private Animator playerAn;
     private bool isGamePaused = false;
 
     [SerializeField] private LayerMask groundLayer;
@@ -32,15 +33,16 @@ public class PlayerMovement : MonoBehaviour
 
         groundCheck = GetComponentInChildren<Transform>();
         playerSprite = GetComponentInChildren<SpriteRenderer>();
-        playerReset = GetComponentInChildren<Transform>();
+        playerAn = GetComponent<Animator>();
     }
 
     //Simple movement. There's no maxSpeed so the longer you hold the faster you get.
-    void Update()
+    void LateUpdate()
     {
         if (!isGamePaused)
         {
             Movement();
+            playerAnimation();
         }
 
         if (gb.Input.ButtonBJustPressed)
@@ -48,12 +50,6 @@ public class PlayerMovement : MonoBehaviour
             //switch these two for insta reset vs pause screen
             PauseToggler();
             //mainManager.ResetScene();
-        }
-
-        //Out of bounds reset
-        if (transform.position.y < -1)
-        {
-            mainManager.ResetScene();
         }
 
         IsGrounded();
@@ -82,6 +78,26 @@ public class PlayerMovement : MonoBehaviour
             gb.Sound.PlaySound(jumpSound);
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
+    }
+
+    //Manages the player's movement animation.
+    private void playerAnimation()
+    {
+        //allowing animation to speed up (animation time speeds up by factor of speed)
+        //sqrt is good so that animation doesn't get too fast. Could switch to log to slow it more
+        playerAn.SetFloat("speed", (float)Math.Sqrt(Math.Abs(rb.velocity.x)));
+
+        /*
+        basic animator if we want animation speed to be constant
+        if (rb.velocity.x != 0)
+        {
+            playerAn.SetFloat("speed", 2);
+        }
+        else
+        {
+            playerAn.SetFloat("speed", 0);
+        }
+        */
     }
 
     //Pause toggler pauses the game and brings up pause buttons

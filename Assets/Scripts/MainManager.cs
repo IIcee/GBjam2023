@@ -70,12 +70,16 @@ public class MainManager : MonoBehaviour
     public IEnumerator ResetScene()
     {
         Time.timeScale = 1; //make sure time is ok in case of pausing
+        Debug.Log(1);
         //fade
         yield return gb.Display.StartCoroutine(gb.Display.FadeToBlack(2));
+        Debug.Log(2);
         //load next scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log(3);
         //fade back
         yield return gb.Display.StartCoroutine(gb.Display.FadeFromBlack(2));
+        Debug.Log(4);
         
     }
 
