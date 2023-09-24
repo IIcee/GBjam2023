@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Transform groundCheck;
     private SpriteRenderer playerSprite;
+    private Transform playerReset;
 
     [SerializeField] private LayerMask groundLayer;
 
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         groundCheck = GetComponentInChildren<Transform>();
         playerSprite = GetComponentInChildren<SpriteRenderer>();
+        playerReset = GetComponentInChildren<Transform>();
     }
 
     //Simple movement. There's no maxSpeed so the longer you hold the faster you get.
@@ -31,14 +33,14 @@ public class PlayerMovement : MonoBehaviour
         if (gb.Input.Left)
         {
             rb.velocity += speed * Vector2.left/speedAdjuster;
-            transform.position += gb.Input.LeftPressedTime * speed * Time.deltaTime * -Vector3.right;
+            //transform.position += gb.Input.LeftPressedTime * speed * Time.deltaTime * -Vector3.right;
             playerSprite.flipX = true;
         }
 
         if (gb.Input.Right)
         {
             rb.velocity += speed * Vector2.right/speedAdjuster;
-            transform.position += gb.Input.RightPressedTime * speed * Time.deltaTime * transform.right;
+            //transform.position += gb.Input.RightPressedTime * speed * Time.deltaTime * transform.right;
             playerSprite.flipX = false;
         }
 
@@ -47,6 +49,11 @@ public class PlayerMovement : MonoBehaviour
         {
             gb.Sound.PlaySound(jumpSound);
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+        }
+
+        if (gb.Input.ButtonAJustPressed)
+        {
+            playerReset.position = new Vector2(0, 0);
         }
 
         IsGrounded();
