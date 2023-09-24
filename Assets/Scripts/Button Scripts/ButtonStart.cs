@@ -5,22 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class ButtonStart : Button
 {   
-    MainManager mainManager;
-    protected override void Start()
-    {
-        base.Start();
-        mainManager = MainManager.Instance;
-    }
-    //this function WILL change to the first scene. Currently it fades to black and back.
+    //this function loads the next scene
     public override void Press()
     {
         base.Press();
-        //SceneManager.LoadScene(1);
-        //StartCoroutine(StartFade());
         StartCoroutine(MainManager.Instance.LoadNextScene());
     }
 
-    //Enumerator for fading. The banana strings are for testing.
+    //Example fade enumerator with testing scripts
     public IEnumerator StartFade()
     {
         Debug.Log("Banana");

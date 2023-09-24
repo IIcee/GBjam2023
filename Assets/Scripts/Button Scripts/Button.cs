@@ -21,11 +21,13 @@ public class Button : MonoBehaviour
     [SerializeField] Sprite buttonSprite;
     
     protected GBConsoleController gb;
+    protected MainManager mainManager;
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
         gb = GBConsoleController.GetInstance();
+        mainManager = MainManager.Instance;
     }
 
     // Update is called once per frame. Calls navigation if button is selected.

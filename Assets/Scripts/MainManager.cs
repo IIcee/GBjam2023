@@ -42,23 +42,40 @@ public class MainManager : MonoBehaviour
         //fade
         yield return gb.Display.StartCoroutine(gb.Display.FadeToBlack(2));
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        // Start loading next scene
-        /*
-        AsyncOperation asyncLoadLevel = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
-        Debug.Log("Banana0");
-        // Wait until the level finish loading
-        while (!asyncLoadLevel.isDone)
-            yield return null;
-        Debug.Log("Banana1");
-        // Wait a frame so every Awake and Start method is called
-        yield return new WaitForEndOfFrame();
-        Debug.Log("Banana2");
-        */
         //fade back
         yield return gb.Display.StartCoroutine(gb.Display.FadeFromBlack(2));
         Debug.Log("Banana3");
     }
 
+    //Pause stops the time and brings up the pause screen.
+    public void Pause()
+    {
+        Time.timeScale = 0;
+        //There must be a better way of doing this, but this way this can persist between scenes
+        //Pause Screens need to be under a pause parent...
+        GameObject pauseParent = GameObject.FindGameObjectWithTag("Pause");
+        GameObject pauseScreen = pauseParent.transform.GetChild(0).gameObject;
+        pauseScreen.SetActive(true);
+    }
+
+    //Unpause removes the pause screen and sets timescale back to one.
+    public void UnPause()
+    {
+        GameObject pauseParent = GameObject.FindGameObjectWithTag("Pause");
+        GameObject pauseScreen = pauseParent.transform.GetChild(0).gameObject;
+        pauseScreen.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    //Resets scene
+    public void ResetScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1; //make sure time is ok in case of pausing
+    }
+
+    /*
+    OPTIONS STUFF CURRENTLY UNUSED
     //Takes you to the options screen
     public void LoadOptions()
     {
@@ -84,4 +101,5 @@ public class MainManager : MonoBehaviour
         yield return gb.Display.StartCoroutine(gb.Display.FadeFromBlack(2));
         LoadCurrentScene();
     }
+    */
 }
