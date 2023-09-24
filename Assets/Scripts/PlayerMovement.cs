@@ -31,14 +31,14 @@ public class PlayerMovement : MonoBehaviour
         if (gb.Input.Left)
         {
             rb.velocity += speed * Vector2.left/speedAdjuster;
-            //transform.position += gb.Input.LeftPressedTime * speed * Time.deltaTime * -Vector3.right;
+            transform.position += gb.Input.LeftPressedTime * speed * Time.deltaTime * -Vector3.right;
             playerSprite.flipX = true;
         }
 
         if (gb.Input.Right)
         {
             rb.velocity += speed * Vector2.right/speedAdjuster;
-            //transform.position += gb.Input.RightPressedTime * speed * Time.deltaTime * transform.right;
+            transform.position += gb.Input.RightPressedTime * speed * Time.deltaTime * transform.right;
             playerSprite.flipX = false;
         }
 

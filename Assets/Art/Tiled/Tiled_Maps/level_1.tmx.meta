@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 96186286ba942eb46a610ab3d08a0691
+guid: 26f2db1110f1e7348ab1b133eaca38c5
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -8,10 +8,8 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 1fa25d03934ea624a82bf2fcee6f0873, type: 3}
-  missingFiles:
-  - ../Tiled_Tiles/gbjam.tsx
-  errors:
-  - 'Missing tileset asset: ../Tiled_Tiles/gbjam.tsx'
+  missingFiles: []
+  errors: []
   warnings: []
   missingSortingLayers: []
   missingLayers: []
