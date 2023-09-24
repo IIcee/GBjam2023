@@ -272,6 +272,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: reset_button
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 53
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9936b12e636d45d47858eb3e7e152567
+      internalID: -1551612297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reset_button_press
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 37
+        width: 24
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b1c7529149d9b04c94d996a9228c495
+      internalID: 1654255219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -283,14 +325,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      options_button: -1116889277
-      credits_button: -213967707
-      options_button_press: -348955757
-      start_button_press: 1120704032
-      exit_button: 1881061733
-      start_button: 562943524
-      exit_button_press: -404447555
-      credits_button_press: 224486263
+      reset_button_press: 1654255219
+      options_button: 531172058
+      credits_button: 615543189
+      options_button_press: -730718933
+      reset_button: -1551612297
+      start_button_press: 777694421
+      exit_button: 290854504
+      start_button: 1334253653
+      exit_button_press: 496176595
+      credits_button_press: -2066265929
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
