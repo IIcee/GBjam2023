@@ -37,9 +37,26 @@ public class MainManager : MonoBehaviour
     }
 
     //Loads next scene
-    public void LoadNextScene()
+    public IEnumerator LoadNextScene()
     {
+        //fade
+        yield return gb.Display.StartCoroutine(gb.Display.FadeToBlack(2));
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        // Start loading next scene
+        /*
+        AsyncOperation asyncLoadLevel = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
+        Debug.Log("Banana0");
+        // Wait until the level finish loading
+        while (!asyncLoadLevel.isDone)
+            yield return null;
+        Debug.Log("Banana1");
+        // Wait a frame so every Awake and Start method is called
+        yield return new WaitForEndOfFrame();
+        Debug.Log("Banana2");
+        */
+        //fade back
+        yield return gb.Display.StartCoroutine(gb.Display.FadeFromBlack(2));
+        Debug.Log("Banana3");
     }
 
     //Takes you to the options screen

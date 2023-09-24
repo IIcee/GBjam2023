@@ -19,6 +19,5 @@ public class PlayerFollower : MonoBehaviour
     void Update()
     {
         transform.position = player.transform.position + offset;
-        Debug.Log(offset);
     }
 }
