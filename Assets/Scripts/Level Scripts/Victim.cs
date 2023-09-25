@@ -8,9 +8,12 @@ public class Victim : MonoBehaviour
     [SerializeField] private Levels levels;
     private bool IsBufferOver;
 
+    private MainManager mainManager;
+
     private void Start()
     {
         IsBufferOver = true;
+        mainManager = MainManager.Instance;
     }
 
     private void OnTriggerEnter2D(Collider2D player)
@@ -19,7 +22,10 @@ public class Victim : MonoBehaviour
         {
             IsBufferOver = false;
             Invoke(nameof(ResetBuffer), 2.0f);
-            levels.VictimSaved();
+            StartCoroutine(mainManager.LoadVictoryScene());
+
+            //Levels scripts aren't fully implemented yet
+            //levels.VictimSaved();
         }
     }
 

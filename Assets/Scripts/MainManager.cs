@@ -46,6 +46,26 @@ public class MainManager : MonoBehaviour
         yield return gb.Display.StartCoroutine(gb.Display.FadeFromBlack(2));
     }
 
+    //Loads start scene
+    public IEnumerator LoadStartScene()
+    {
+        //fade
+        yield return gb.Display.StartCoroutine(gb.Display.FadeToBlack(2));
+        SceneManager.LoadScene(0);
+        //fade back
+        yield return gb.Display.StartCoroutine(gb.Display.FadeFromBlack(2));
+    }
+
+    //Loads victory scene
+    public IEnumerator LoadVictoryScene()
+    {
+        //fade
+        yield return gb.Display.StartCoroutine(gb.Display.FadeToBlack(2));
+        SceneManager.LoadScene("VictoryScreen");
+        //fade back
+        yield return gb.Display.StartCoroutine(gb.Display.FadeFromBlack(2));
+    }
+
     //Pause stops the time and brings up the pause screen.
     public void Pause()
     {
@@ -80,7 +100,7 @@ public class MainManager : MonoBehaviour
         //fade back
         yield return gb.Display.StartCoroutine(gb.Display.FadeFromBlack(2));
         Debug.Log(4);
-        
+
     }
 
     /*
