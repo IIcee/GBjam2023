@@ -281,7 +281,7 @@ TextureImporter:
         width: 24
         height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -302,7 +302,7 @@ TextureImporter:
         width: 24
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -310,6 +310,48 @@ TextureImporter:
       bones: []
       spriteID: 3b1c7529149d9b04c94d996a9228c495
       internalID: 1654255219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu_button
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 22
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b1d273d4cdf614aa01a37d055fa59c
+      internalID: 858907637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu_button_press
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 8
+        width: 24
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86b6316e4ef252c44b1cbcccc3284443
+      internalID: 176970324
       vertices: []
       indices: 
       edges: []
@@ -328,8 +370,10 @@ TextureImporter:
       reset_button_press: 1654255219
       options_button: 531172058
       credits_button: 615543189
+      menu_button: 858907637
       options_button_press: -730718933
       reset_button: -1551612297
+      menu_button_press: 176970324
       start_button_press: 777694421
       exit_button: 290854504
       start_button: 1334253653
