@@ -576,6 +576,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19dadac69903a4b889289e4d67f7b7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelMusic: {fileID: 8300000, guid: d3292b7425fe34f17b399c04dd753200, type: 3}
+  victoryMusic: {fileID: 8300000, guid: 2498c59fb9e3e462cbb284985050a058, type: 3}
 --- !u!4 &684733937
 Transform:
   m_ObjectHideFlags: 0
@@ -849,6 +851,10 @@ PrefabInstance:
       propertyPath: jumpSound
       value: 
       objectReference: {fileID: 8300000, guid: d2d7b41db2b01424e8fc039370d3d6be, type: 3}
+    - target: {fileID: 7562129600532361164, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
+      propertyPath: landSound
+      value: 
+      objectReference: {fileID: 8300000, guid: bae05e253c3a54b30ab5b74f16c9a238, type: 3}
     - target: {fileID: 7562129600532361164, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
       propertyPath: jumpingPower
       value: 2.5

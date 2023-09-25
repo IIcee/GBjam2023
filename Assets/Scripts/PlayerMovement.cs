@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpingPower;
 
     [SerializeField] AudioClip jumpSound;
+    [SerializeField] AudioClip landSound;
 
     [SerializeField] MainManager mainManager;
 
@@ -118,5 +119,12 @@ public class PlayerMovement : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
+
+    //Landing sound, doesn't work atm
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collision");
+        gb.Sound.PlaySound(landSound);
     }
 }

@@ -17,7 +17,8 @@ public class ButtonExit : Button
         IEnumerator ExitFade()
         {
                 Time.timeScale = 1; //make sure time is ok in case of pausing
-                                    //fade
+                gb.Sound.FadeOutMusic(2);
+                //fade
                 yield return gb.Display.StartCoroutine(gb.Display.FadeToBlack(2));
 #if UNITY_EDITOR
                 EditorApplication.ExitPlaymode();

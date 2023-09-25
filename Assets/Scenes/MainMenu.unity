@@ -201,6 +201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19dadac69903a4b889289e4d67f7b7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelMusic: {fileID: 8300000, guid: d3292b7425fe34f17b399c04dd753200, type: 3}
+  victoryMusic: {fileID: 8300000, guid: 2498c59fb9e3e462cbb284985050a058, type: 3}
 --- !u!4 &316836877
 Transform:
   m_ObjectHideFlags: 0

@@ -3,7 +3,8 @@ guid: 19dadac69903a4b889289e4d67f7b7c0
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - levelMusic: {fileID: 8300000, guid: d3292b7425fe34f17b399c04dd753200, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

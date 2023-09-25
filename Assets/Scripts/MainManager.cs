@@ -16,6 +16,9 @@ public class MainManager : MonoBehaviour
 
     private GBConsoleController gb;
 
+    [SerializeField] AudioClip levelMusic;
+    [SerializeField] AudioClip victoryMusic;
+
     //On awake create instance that persists between scenes
     private void Awake()
     {
@@ -41,7 +44,10 @@ public class MainManager : MonoBehaviour
     {
         //fade
         yield return gb.Display.StartCoroutine(gb.Display.FadeToBlack(2));
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        gb.Sound.PlayMusic(levelMusic);
+
         //fade back
         yield return gb.Display.StartCoroutine(gb.Display.FadeFromBlack(2));
     }
@@ -51,7 +57,9 @@ public class MainManager : MonoBehaviour
     {
         //fade
         yield return gb.Display.StartCoroutine(gb.Display.FadeToBlack(2));
+
         SceneManager.LoadScene(0);
+
         //fade back
         yield return gb.Display.StartCoroutine(gb.Display.FadeFromBlack(2));
     }
@@ -61,7 +69,10 @@ public class MainManager : MonoBehaviour
     {
         //fade
         yield return gb.Display.StartCoroutine(gb.Display.FadeToBlack(2));
+
         SceneManager.LoadScene("VictoryScreen");
+        gb.Sound.PlayMusic(victoryMusic);
+
         //fade back
         yield return gb.Display.StartCoroutine(gb.Display.FadeFromBlack(2));
     }
