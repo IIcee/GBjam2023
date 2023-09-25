@@ -740,6 +740,10 @@ PrefabInstance:
       value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: -5942504918656043399, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 3a8c5e9393c3c4c5198de80b6f59bad8, type: 2}
+    - target: {fileID: -5942504918656043399, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
       propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
@@ -833,8 +837,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6650501682963058542, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 6650501682963058542, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 3a8c5e9393c3c4c5198de80b6f59bad8, type: 2}
     - target: {fileID: 6650501682963058542, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
       propertyPath: m_UseAutoMass
       value: 0
@@ -861,11 +869,11 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: bae05e253c3a54b30ab5b74f16c9a238, type: 3}
     - target: {fileID: 7562129600532361164, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
       propertyPath: jumpingPower
-      value: 2.5
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 7562129600532361164, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
       propertyPath: speedAdjuster
-      value: 30
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
