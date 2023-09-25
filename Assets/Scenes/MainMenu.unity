@@ -399,7 +399,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Lead:\t Ice\n\nArt:\t Fluffy\n\t KingDreadzz\n\nSound:\t Kosmid2\n\nCode:\t
+  m_text: "Lead:\t Ice\n\nArt:\t Fluffy\n\t KingDreadzz\n\nSound:\t Kosmid\n\nCode:\t
     SerAvi\n\t Neph"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bb6cfcea15dc64e78ad83e2e82d8f438, type: 2}
