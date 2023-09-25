@@ -62,12 +62,14 @@ public class PlayerMovement : MonoBehaviour
         if (gb.Input.Left)
         {
             rb.velocity += speed * Vector2.left / speedAdjuster;
+            //rb.AddForce(speed * Vector2.left / speedAdjuster, ForceMode2D.Impulse);
             //transform.position += gb.Input.LeftPressedTime * speed * Time.deltaTime * -Vector3.right;
             playerSprite.flipX = true;
         }
 
         if (gb.Input.Right)
         {
+            //rb.AddForce(speed * Vector2.right / speedAdjuster, ForceMode2D.Impulse);
             rb.velocity += speed * Vector2.right / speedAdjuster;
             //transform.position += gb.Input.RightPressedTime * speed * Time.deltaTime * transform.right;
             playerSprite.flipX = false;
@@ -78,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
         {
             gb.Sound.PlaySound(jumpSound);
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            //rb.AddForce(Vector2.up * jumpingPower, ForceMode2D.Impulse);
         }
     }
 
