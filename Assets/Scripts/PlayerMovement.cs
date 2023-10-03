@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         playerAn = GetComponent<Animator>();
     }
 
+    //Update manages pausing.
     void Update()
     {
         if (gb.Input.ButtonBJustPressed)
@@ -47,10 +48,10 @@ public class PlayerMovement : MonoBehaviour
             //mainManager.ResetScene();
         }
 
-        IsGrounded();
+        //IsGrounded();
     }
 
-    //Simple movement. There's no maxSpeed so the longer you hold the faster you get.
+    //FixedUpdate manages player movement and animation.
     void FixedUpdate()
     {
         if (!isGamePaused)
@@ -61,22 +62,27 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //Movement manages inputs and movement.
+    //Old movement scripts are commented out, REMOVE later
     private void Movement()
     {
         if (gb.Input.Left)
         {
+            rb.AddForce(speed * Vector2.left / speedAdjuster, ForceMode2D.Impulse);
+
             //rb.velocity = new Vector2(rb.velocity.x - speed, rb.velocity.y);
             //rb.velocity += speed * Vector2.left / speedAdjuster;
-            rb.AddForce(speed * Vector2.left / speedAdjuster, ForceMode2D.Impulse);
             //transform.position += gb.Input.LeftPressedTime * speed * Time.deltaTime * -Vector3.right;
+            
             playerSprite.flipX = true;
         }
 
         if (gb.Input.Right)
         {
             rb.AddForce(speed * Vector2.right / speedAdjuster, ForceMode2D.Impulse);
+
             //rb.velocity += speed * Vector2.right / speedAdjuster;
             //transform.position += gb.Input.RightPressedTime * speed * Time.deltaTime * transform.right;
+
             playerSprite.flipX = false;
         }
 
@@ -85,8 +91,9 @@ public class PlayerMovement : MonoBehaviour
         {
             gb.Sound.PlaySound(jumpSound);
             isOnGround = false;
-            //rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             rb.AddForce(Vector2.up * jumpingPower, ForceMode2D.Impulse);
+
+            //rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
     }
 
@@ -124,13 +131,15 @@ public class PlayerMovement : MonoBehaviour
         isGamePaused = !isGamePaused;
     }
 
-    //Checks if player is on ground using the collision of a separate empty object to an environment object which is in the "ground" layer.
+    //Checks if player is on ground using the overlap of a separate empty object with an environment object which is in the "ground" layer.
+    //Currently unused, REMOVE if not using.
     private bool IsGrounded()
     {
         Debug.Log(groundCheck.transform.position);
         return Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, groundLayer);
     }
 
+    //Draw gizmos when selected
     void OnDrawGizmosSelected()
     {
         // Display the isGrounded circle when selected
@@ -138,7 +147,7 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.DrawSphere(groundCheck.transform.position, groundCheckRadius);
     }
 
-    //Landing sound, doesn't work atm
+    //OnCollisionEnter2D currently manages landing.
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collision");
