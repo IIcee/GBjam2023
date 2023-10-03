@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField][Range(1.0f, 10.0f)] private float speed;
+    [SerializeField] float speed;
     [SerializeField] float speedAdjuster;
-    [SerializeField] private float jumpingPower;
+    [SerializeField] float jumpingPower;
+    [SerializeField] float groundCheckRadius;
 
     [SerializeField] AudioClip jumpSound;
     [SerializeField] AudioClip landSound;
@@ -15,10 +16,12 @@ public class PlayerMovement : MonoBehaviour
 
     private GBConsoleController gb;
     private Rigidbody2D rb;
-    private Transform groundCheck;
+    [SerializeField] GameObject groundCheck;
     private SpriteRenderer playerSprite;
     private Animator playerAn;
-    private bool isGamePaused = false;
+
+    bool isGamePaused = false;
+    bool isOnGround = true;
 
     [SerializeField] private LayerMask groundLayer;
 
@@ -31,20 +34,12 @@ public class PlayerMovement : MonoBehaviour
         mainManager = MainManager.Instance;
         rb = GetComponent<Rigidbody2D>();
 
-        groundCheck = GetComponentInChildren<Transform>();
         playerSprite = GetComponentInChildren<SpriteRenderer>();
         playerAn = GetComponent<Animator>();
     }
 
-    //Simple movement. There's no maxSpeed so the longer you hold the faster you get.
-    void LateUpdate()
+    void Update()
     {
-        if (!isGamePaused)
-        {
-            Movement();
-            playerAnimation();
-        }
-
         if (gb.Input.ButtonBJustPressed)
         {
             //switch these two for insta reset vs pause screen
@@ -53,6 +48,16 @@ public class PlayerMovement : MonoBehaviour
         }
 
         IsGrounded();
+    }
+
+    //Simple movement. There's no maxSpeed so the longer you hold the faster you get.
+    void FixedUpdate()
+    {
+        if (!isGamePaused)
+        {
+            Movement();
+            playerAnimation();
+        }
     }
 
     //Movement manages inputs and movement.
@@ -76,9 +81,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //You jump only when you're on ground.
-        if (gb.Input.UpJustPressed && IsGrounded())
+        if (gb.Input.Up && isOnGround)
         {
             gb.Sound.PlaySound(jumpSound);
+            isOnGround = false;
             //rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             rb.AddForce(Vector2.up * jumpingPower, ForceMode2D.Impulse);
         }
@@ -121,13 +127,22 @@ public class PlayerMovement : MonoBehaviour
     //Checks if player is on ground using the collision of a separate empty object to an environment object which is in the "ground" layer.
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        Debug.Log(groundCheck.transform.position);
+        return Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, groundLayer);
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        // Display the isGrounded circle when selected
+        Gizmos.color = new Color(1, 1, 0, 0.75F);
+        Gizmos.DrawSphere(groundCheck.transform.position, groundCheckRadius);
     }
 
     //Landing sound, doesn't work atm
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collision");
         gb.Sound.PlaySound(landSound);
+        isOnGround = true;
     }
 }

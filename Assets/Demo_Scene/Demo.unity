@@ -318,6 +318,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedSprite: {fileID: -404447555, guid: d035766e4526c3745b36e8bd45b9d533, type: 3}
   buttonSprite: {fileID: 1881061733, guid: d035766e4526c3745b36e8bd45b9d533, type: 3}
+--- !u!1 &402716486 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8011828553084409662, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
+  m_PrefabInstance: {fileID: 1584748622}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &409955667 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5722559217650395615, guid: a184ae19239980c4198a5e38df23cce3, type: 3}
@@ -853,7 +858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7562129600532361164, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
       propertyPath: speed
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7562129600532361164, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
       propertyPath: animator
@@ -868,12 +873,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: bae05e253c3a54b30ab5b74f16c9a238, type: 3}
     - target: {fileID: 7562129600532361164, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
+      propertyPath: groundCheck
+      value: 
+      objectReference: {fileID: 402716486}
+    - target: {fileID: 7562129600532361164, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
       propertyPath: jumpingPower
       value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 7562129600532361164, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
       propertyPath: speedAdjuster
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562129600532361164, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
+      propertyPath: groundCheckRadius
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d40c1de8aa0048d46bf4742ef2867265, type: 3}
