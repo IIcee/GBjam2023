@@ -5,12 +5,12 @@ The game was created in Unity, using DoctorM64's GameBoy Unity template and Sean
 
 You can play the game in your browser at: https://nephertheless.itch.io/walter
 
-Credits:
-Project Manager                      NepherTheLess
-Programming                          SerAvi
-Sound Design & Music Composition     Kosmid
-Environment & Level Design           KingDreadzz
-Character Art & Generalist           FluffyW3irdo
+Credits:  
+Project Manager: NepherTheLess  
+Programming: SerAvi  
+Sound Design & Music Composition: Kosmid  
+Environment & Level Design: KingDreadzz  
+Character Art & Generalist: FluffyW3irdo  
 
 GameBoy template used: https://doctorm64.itch.io/gbunity
 Unity tile tool: https://seanba.itch.io/supertiled2unity
